@@ -29,5 +29,14 @@ Esta aplicación móvil se diseñará para facilitar la gestión del inventario 
 
 El objetivo de esta aplicación es optimizar la administración del inventario de minisuper o supermercados, minimizando los errores humanos y asegurando que el administrador siempre esté informado sobre el estado de los productos en su tienda.
 
+## MookUps:
+![image](https://github.com/user-attachments/assets/172d31c4-b62d-40b3-ba9a-35133eed2a07)
+![image](https://github.com/user-attachments/assets/b9f27c8c-0425-47ba-8b84-a738d56c8405)
+![image](https://github.com/user-attachments/assets/90f83bfd-7970-4cb5-b4c9-62e78143ae7f)
+![image](https://github.com/user-attachments/assets/4fb3e62b-527c-4691-bef3-34458582603b)
+![image](https://github.com/user-attachments/assets/d24829f7-4621-46c3-b1ec-6829a52b970e)
+![image](https://github.com/user-attachments/assets/14a83cf8-b115-4aa4-8e11-805604348973)
+![image](https://github.com/user-attachments/assets/5fa05fcd-7034-48d6-89dc-0165682cdc9c)
+![image](https://github.com/user-attachments/assets/a87a6b49-938f-4fed-849a-ced94b00c7f1)
 
 
