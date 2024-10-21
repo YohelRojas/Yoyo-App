@@ -18,28 +18,25 @@ class ClientesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_clientes)
 
-        // Vinculación de vistas
         tvUsername = findViewById(R.id.tvUsername)
         btnEditar = findViewById(R.id.btnEditar)
         btnVolver = findViewById(R.id.btnVolver)
         btnGuardar = findViewById(R.id.btnGuardar)
 
-        // Muestra el nombre de usuario
         tvUsername.text = "USERNAME"
 
-        // Funcionalidad de los botones
+
         btnEditar.setOnClickListener {
             Toast.makeText(this, "Editar clientes", Toast.LENGTH_SHORT).show()
-            // Aquí puedes agregar la lógica para editar clientes
         }
 
         btnVolver.setOnClickListener {
-            finish() // Vuelve a la pantalla anterior
+            finish()
         }
 
         btnGuardar.setOnClickListener {
             Toast.makeText(this, "Guardar cambios", Toast.LENGTH_SHORT).show()
-            // Aquí puedes agregar la lógica para guardar cambios
+
         }
     }
 }

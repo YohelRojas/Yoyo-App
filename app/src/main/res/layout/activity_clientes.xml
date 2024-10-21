@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -19,7 +18,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <!-- Título de la App -->
         <TextView
             android:id="@+id/txt_logo"
             android:layout_width="wrap_content"
@@ -30,7 +28,6 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!-- Usuario actual -->
         <TextView
             android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
@@ -41,7 +38,6 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- Título de Clientes -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +47,6 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <!-- Tabla de Clientes -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="433dp"
@@ -62,7 +57,6 @@
                 android:layout_height="wrap_content"
                 android:stretchColumns="1,2,3,4">
 
-                <!-- Cabecera de la tabla -->
                 <TableRow>
 
                     <TextView
@@ -109,7 +103,6 @@
                         android:textStyle="bold" />
                 </TableRow>
 
-                <!-- Filas de la tabla (Ejemplo) -->
                 <TableRow>
 
                     <TextView
@@ -150,7 +143,6 @@
             </TableLayout>
         </ScrollView>
 
-        <!-- Botones de Editar, Volver, Guardar -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

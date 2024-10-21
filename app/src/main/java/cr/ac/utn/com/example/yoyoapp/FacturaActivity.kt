@@ -25,7 +25,7 @@ class FacturaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_factura)
 
-        // Vinculación de vistas
+
         ivBack = findViewById(R.id.ivBack)
         etNumeroFactura = findViewById(R.id.etNumeroFactura)
         etCliente = findViewById(R.id.etCliente)
@@ -35,31 +35,23 @@ class FacturaActivity : AppCompatActivity() {
         btnCancelar = findViewById(R.id.btnCancelar)
         btnGuardar = findViewById(R.id.btnGuardar)
         tvUsername = findViewById(R.id.tvUsername)
+        tvUsername.text = "USERNAME"
 
-        // Muestra el nombre de usuario actual
-        tvUsername.text = "USERNAME" // Puedes ajustar esto con el usuario autenticado
-
-        // Botón de regresar al menú anterior
         ivBack.setOnClickListener {
-            finish() // Vuelve a la pantalla anterior
+            finish()
         }
 
-        // Funcionalidad del botón Imprimir
         btnImprimir.setOnClickListener {
             val numeroFactura = etNumeroFactura.text.toString()
 
             if (numeroFactura.isEmpty()) {
                 Toast.makeText(this, "Ingrese el número de factura", Toast.LENGTH_SHORT).show()
             } else {
-                // Lógica para imprimir la factura (ejemplo de acción)
                 Toast.makeText(this, "Imprimiendo factura: $numeroFactura", Toast.LENGTH_SHORT).show()
-                // Aquí puedes agregar lógica adicional para la impresión
             }
         }
 
-        // Funcionalidad del botón Cancelar
         btnCancelar.setOnClickListener {
-            // Limpia todos los campos
             etNumeroFactura.text.clear()
             etCliente.text.clear()
             etProductos.text.clear()
@@ -68,7 +60,6 @@ class FacturaActivity : AppCompatActivity() {
             Toast.makeText(this, "Campos limpiados", Toast.LENGTH_SHORT).show()
         }
 
-        // Funcionalidad del botón Guardar
         btnGuardar.setOnClickListener {
             val numeroFactura = etNumeroFactura.text.toString()
             val cliente = etCliente.text.toString()
@@ -78,9 +69,7 @@ class FacturaActivity : AppCompatActivity() {
             if (numeroFactura.isEmpty() || cliente.isEmpty() || productos.isEmpty() || total.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
             } else {
-                // Lógica para guardar la factura (ejemplo de acción)
                 Toast.makeText(this, "Factura guardada exitosamente", Toast.LENGTH_SHORT).show()
-                // Aquí puedes agregar lógica adicional para guardar la factura
             }
         }
     }

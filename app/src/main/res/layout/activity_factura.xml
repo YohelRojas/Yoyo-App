@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,9 +10,6 @@
     android:padding="16dp"
     android:background="@drawable/fondo_gradient">
 
-    <!-- Título de la App -->
-
-    <!-- Usuario actual -->
     <TextView
         android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
@@ -39,7 +37,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAppTitle" />
 
-    <!-- Título Buscar Factura -->
     <TextView
         android:id="@+id/tvBuscarFactura"
         android:layout_width="wrap_content"
@@ -53,18 +50,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUsername" />
 
-    <!-- Botón de regreso -->
     <ImageView
         android:id="@+id/ivBack"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/back"
-        android:src="@drawable/ic_back"
+        android:src="@font/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Campo de búsqueda de factura -->
     <TextView
         android:id="@+id/tvNumeroFactura"
         android:layout_width="wrap_content"
@@ -89,7 +84,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Campo de Cliente -->
     <TextView
         android:id="@+id/tvCliente"
         android:layout_width="wrap_content"
@@ -114,7 +108,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Campo de Productos -->
     <TextView
         android:id="@+id/tvProductos"
         android:layout_width="wrap_content"
@@ -139,7 +132,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Campo de Total -->
     <TextView
         android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
@@ -164,7 +156,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Botones de Imprimir, Cancelar y Guardar -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"

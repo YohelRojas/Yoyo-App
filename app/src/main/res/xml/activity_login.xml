@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -6,7 +8,6 @@
     android:padding="16dp"
     android:background="@drawable/fondo_gradient">
 
-    <!-- Título de la App -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +18,6 @@
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Título de Iniciar Sesión -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +27,6 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Campo de Usuario -->
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="match_parent"
@@ -36,7 +35,6 @@
         android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_edittext"/>
 
-    <!-- Campo de Contraseña -->
     <EditText
         android:id="@+id/etContrasena"
         android:layout_width="match_parent"
@@ -46,7 +44,6 @@
         android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_edittext"/>
 
-    <!-- Botón de Aceptar -->
     <Button
         android:id="@+id/btnAceptar"
         android:layout_width="wrap_content"
@@ -57,7 +54,6 @@
         android:textColor="#FFFFFF"
         android:padding="12dp"/>
 
-    <!-- Texto de Sign Up -->
     <TextView
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"

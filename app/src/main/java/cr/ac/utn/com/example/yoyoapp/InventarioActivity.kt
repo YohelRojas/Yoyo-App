@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class InventarioActivity : AppCompatActivity() {
 
-    // Variables para la UI
     private lateinit var etStockActual: EditText
     private lateinit var etAgregados: EditText
     private lateinit var etStockMaximo: EditText
@@ -21,7 +20,6 @@ class InventarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventario)
 
-        // Inicializar los elementos de la UI
         etStockActual = findViewById(R.id.etStockActual)
         etAgregados = findViewById(R.id.etAgregados)
         etStockMaximo = findViewById(R.id.etStockMaximo)
@@ -30,7 +28,6 @@ class InventarioActivity : AppCompatActivity() {
         btnCompletarFaltantes = findViewById(R.id.btnCompletarFaltantes)
         btnAceptar = findViewById(R.id.btnAceptar)
 
-        // Lógica para restar stock
         btnRestar.setOnClickListener {
             val currentStock = etStockActual.text.toString().toInt()
             if (currentStock > 0) {
@@ -40,19 +37,16 @@ class InventarioActivity : AppCompatActivity() {
             }
         }
 
-        // Lógica para sumar stock
         btnSumar.setOnClickListener {
             val currentStock = etStockActual.text.toString().toInt()
             etStockActual.setText((currentStock + 1).toString())
         }
 
-        // Lógica para completar faltantes
         btnCompletarFaltantes.setOnClickListener {
             val stockMaximo = etStockMaximo.text.toString().toInt()
             etStockActual.setText(stockMaximo.toString())
         }
 
-        // Lógica para aceptar cambios
         btnAceptar.setOnClickListener {
             Toast.makeText(this, "Inventario actualizado", Toast.LENGTH_SHORT).show()
         }

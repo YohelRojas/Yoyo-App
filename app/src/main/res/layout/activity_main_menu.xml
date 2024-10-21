@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Salir"
-            android:buttonTint="@color/blue" />
+            android:buttonTint="@font/ic_back" />
     </LinearLayout>
 
     <GridLayout
@@ -68,7 +68,6 @@
         android:useDefaultMargins="true"
         android:layout_gravity="center">
 
-        <!-- Botones de opciones del menú -->
         <LinearLayout
             android:layout_width="178dp"
             android:layout_height="120dp"
@@ -78,30 +77,32 @@
             <ImageView
                 android:id="@+id/btnClientes"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:contentDescription="@string/clientes_desc"
-                android:src="@drawable/ic_clientes" />
+                android:layout_height="80dp"/>
+            <!--Faltan agregar las imagenes al font
+            android:contentDescription="@string/clientes_desc"
+            android:src="@drawable/ic_clientes"-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Clientes"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="189dp"
-            android:layout_height="120dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="Clientes"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/btnFacturacion"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:contentDescription="@string/facturacion_desc"
-                android:src="@drawable/ic_facturacion" />
+    <LinearLayout
+        android:layout_width="189dp"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/btnFacturacion"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+        <!--Faltan agregar las imagenes al font
+            android:contentDescription="@string/facturacion_desc"
+            android:src="@drawable/ic_facturacion" -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -120,9 +121,10 @@
             <ImageView
                 android:id="@+id/btnProveedores"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="80dp"/>
+            <!--Faltan agregar las imagenes al font
                 android:contentDescription="@string/proveedores_desc"
-                android:src="@drawable/ic_proveedores" />
+                android:src="@drawable/ic_proveedores" -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,58 +143,61 @@
             <ImageView
                 android:id="@+id/btnProductos"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:contentDescription="@string/productos_desc"
-                android:src="@drawable/ic_productos" />
+                android:layout_height="80dp"/>
+            <!--Faltan agregar las imagenes al font
+            android:contentDescription="@string/productos_desc"
+            android:src="@drawable/ic_productos" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Productos"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="178dp"
-            android:layout_height="120dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="Productos"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/btnInventario"
-                android:layout_width="81dp"
-                android:layout_height="80dp"
-                android:contentDescription="@string/inventario_desc"
-                android:src="@drawable/ic_inventario" />
+    <LinearLayout
+        android:layout_width="178dp"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Inventario"
-                android:textStyle="bold" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/btnInventario"
+            android:layout_width="81dp"
+            android:layout_height="80dp"/>
+        <!--Faltan agregar las imagenes al font
+        android:contentDescription="@string/inventario_desc"
+        android:src="@drawable/ic_inventario" />-->
 
-        <LinearLayout
-            android:layout_width="193dp"
-            android:layout_height="120dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="Inventario"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/btnFacturas"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:contentDescription="@string/facturas_desc"
-                android:src="@drawable/ic_facturas" />
+    <LinearLayout
+        android:layout_width="193dp"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Facturas"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </GridLayout>
+        <ImageView
+            android:id="@+id/btnFacturas"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+        <!--Faltan agregar las imagenes al font
+            android:contentDescription="@string/facturas_desc"
+            android:src="@drawable/ic_facturas" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Facturas"
+            android:textStyle="bold" />
+    </LinearLayout>
+</GridLayout>
 </LinearLayout>

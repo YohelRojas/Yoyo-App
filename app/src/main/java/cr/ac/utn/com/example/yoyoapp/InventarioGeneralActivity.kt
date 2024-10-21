@@ -29,10 +29,8 @@ class InventarioGeneralActivity : AppCompatActivity() {
         ivAlmacenSA = findViewById(R.id.ivAlmacenSA)
         ivCarnesLaFinca = findViewById(R.id.ivCarnesLaFinca)
 
-        // Configuración de los eventos de clic para cada ImageView
         ivBimbo.setOnClickListener {
             Toast.makeText(this, "Seleccionado: Bimbo", Toast.LENGTH_SHORT).show()
-            // Aquí puedes agregar la lógica para redirigir a otra pantalla si es necesario
         }
 
         ivCocaCola.setOnClickListener {
@@ -55,7 +53,6 @@ class InventarioGeneralActivity : AppCompatActivity() {
             Toast.makeText(this, "Seleccionado: Carnes La Finca", Toast.LENGTH_SHORT).show()
         }
 
-        // Botón de volver
         val btnVolver = findViewById<ImageView>(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()

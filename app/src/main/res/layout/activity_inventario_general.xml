@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +9,6 @@
     android:background="@drawable/fondo_gradient"
     tools:context=".InventarioGeneralActivity">
 
-    <!-- Título de la App -->
     <TextView
         android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
@@ -22,7 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Usuario actual -->
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
@@ -36,7 +35,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAppTitle" />
 
-    <!-- Botón de regreso en la parte superior -->
     <ImageView
         android:id="@+id/ivBack"
         android:layout_width="32dp"
@@ -48,7 +46,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Tabla de Proveedores centrada -->
     <TableLayout
         android:id="@+id/tableProveedores"
         android:layout_width="match_parent"
@@ -61,7 +58,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Fila 1: Bimbo y CocaCola -->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,7 +110,6 @@
             </LinearLayout>
         </TableRow>
 
-        <!-- Fila 2: Pepsi y BigCola -->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -167,7 +162,6 @@
             </LinearLayout>
         </TableRow>
 
-        <!-- Fila 3: AlmacenS.A y Carnes La Finca -->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -222,7 +216,6 @@
 
     </TableLayout>
 
-    <!-- Botón Volver en la parte inferior -->
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +11,6 @@
     android:background="@drawable/fondo_gradient"
     tools:context=".InventarioActivity">
 
-    <!-- Título de la App -->
     <TextView
         android:id="@+id/logoPantallaFinal"
         android:layout_width="wrap_content"
@@ -21,7 +21,6 @@
         android:textSize="28sp"
         android:textStyle="bold" />
 
-    <!-- Usuario -->
     <TextView
         android:id="@+id/txt_username"
         android:layout_width="wrap_content"
@@ -32,7 +31,6 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <!-- Título de Inventario -->
     <TextView
         android:id="@+id/txt_inventario"
         android:layout_width="wrap_content"
@@ -43,7 +41,6 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <!-- Encabezado -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,13 +73,11 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Listado de productos -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Ejemplo de fila de producto -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,14 +85,12 @@
             android:weightSum="3"
             android:layout_marginBottom="4dp">
 
-            <!-- Producto -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Mantequilla" />
 
-            <!-- Stock actual -->
             <EditText
                 android:id="@+id/etStockActual"
                 android:layout_width="0dp"
@@ -107,7 +100,6 @@
                 android:inputType="number"
                 android:gravity="center" />
 
-            <!-- Botones de Agregar/Restar -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -137,10 +129,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Agrega más filas de productos de forma similar -->
     </LinearLayout>
-
-    <!-- Stock Máximo -->
 
     <TextView
         android:id="@+id/txt_max_stock"
@@ -157,7 +146,6 @@
         android:inputType="number"
         android:gravity="center" />
 
-    <!-- Botones de completar faltantes y aceptar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

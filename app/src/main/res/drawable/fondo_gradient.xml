@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Capa de fondo con gradiente -->
     <item>
         <shape android:shape="rectangle">
             <gradient
@@ -13,8 +11,6 @@
                 android:type="linear" />
         </shape>
     </item>
-
-    <!-- Capa blanca en el centro -->
     <item
         android:left="16dp"
         android:right="16dp"

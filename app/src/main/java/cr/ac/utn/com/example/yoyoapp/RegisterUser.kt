@@ -23,7 +23,6 @@ class RegisterUser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_user)
 
-        // Vinculación de vistas
         etUsername = findViewById(R.id.etUsername)
         etFullName = findViewById(R.id.etFullName)
         etEmail = findViewById(R.id.etEmail)
@@ -32,7 +31,6 @@ class RegisterUser : AppCompatActivity() {
         btnRegister = findViewById(R.id.btnRegister)
         tvSignIn = findViewById(R.id.tvSignIn)
 
-        // Configuración del botón de registro
         btnRegister.setOnClickListener {
             val username = etUsername.text.toString()
             val fullName = etFullName.text.toString()
@@ -45,15 +43,12 @@ class RegisterUser : AppCompatActivity() {
             } else if (!isTermsAccepted) {
                 Toast.makeText(this, "Debe aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
             } else {
-                // Aquí puedes agregar la lógica para registrar al usuario
                 Toast.makeText(this, "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show()
-                // Navegar a la pantalla de inicio de sesión
                 val intent = Intent(this, LoginUser::class.java)
                 startActivity(intent)
             }
         }
 
-        // Configuración del link para ir al inicio de sesión
         tvSignIn.setOnClickListener {
             val intent = Intent(this, LoginUser::class.java)
             startActivity(intent)

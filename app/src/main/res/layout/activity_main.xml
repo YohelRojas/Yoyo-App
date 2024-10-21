@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +12,6 @@
     tools:context=".LoginUser"
     android:layout_gravity="center">
 
-    <!-- Título de la App -->
     <TextView
         android:id="@+id/txt_logo"
         android:layout_width="wrap_content"
@@ -22,7 +22,6 @@
         android:textSize="28sp"
         android:textStyle="bold" />
 
-    <!-- Título de Iniciar Sesión -->
     <TextView
         android:id="@+id/txt_login"
         android:layout_width="wrap_content"
@@ -32,7 +31,6 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <!-- Campo de Usuario -->
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="match_parent"
@@ -42,7 +40,6 @@
         android:hint="@string/user"
         android:padding="12dp" />
 
-    <!-- Campo de Contraseña -->
     <EditText
         android:id="@+id/etContrasena"
         android:layout_width="match_parent"
@@ -53,7 +50,6 @@
         android:inputType="textPassword"
         android:padding="12dp" />
 
-    <!-- Texto de Sign Up -->
     <TextView
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
@@ -64,7 +60,6 @@
         android:textColor="#FF0000"
         android:textSize="16sp" />
 
-    <!-- Botón de Aceptar centrado y más grande -->
     <Button
         android:id="@+id/btnAceptar"
         android:layout_width="200dp"
