@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/fondo_gradient"
+    tools:context=".InventarioActivity">
+
+    <!-- Título de la App -->
+    <TextView
+        android:id="@+id/logoPantallaFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/logo"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- Usuario -->
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/username"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Título de Inventario -->
+    <TextView
+        android:id="@+id/txt_inventario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/inventory"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/txt_productos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/products"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/stock"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/add"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Listado de productos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Ejemplo de fila de producto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="4dp">
+
+            <!-- Producto -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mantequilla" />
+
+            <!-- Stock actual -->
+            <EditText
+                android:id="@+id/etStockActual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="15"
+                android:inputType="number"
+                android:gravity="center" />
+
+            <!-- Botones de Agregar/Restar -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnRestar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="➖" />
+
+                <EditText
+                    android:id="@+id/etAgregados"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:inputType="number"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnSumar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="➕" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Agrega más filas de productos de forma similar -->
+    </LinearLayout>
+
+    <!-- Stock Máximo -->
+
+    <TextView
+        android:id="@+id/txt_max_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/maxstock" />
+
+    <EditText
+        android:id="@+id/etStockMaximo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="25"
+        android:inputType="number"
+        android:gravity="center" />
+
+    <!-- Botones de completar faltantes y aceptar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnCompletarFaltantes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/refillItems" />
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Accept" />
+    </LinearLayout>
+</LinearLayout>
