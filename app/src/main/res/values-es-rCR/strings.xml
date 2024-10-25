@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YoyoApp</string>
+    <string name="user">Usuario</string>
+    <string name="logo">YOYO APP</string>
+    <string name="login">Iniciar Sesion</string>
+    <string name="username">Nombre de Usuario</string>
+    <string name="inventory">Inventario</string>
+    <string name="products">Productos</string>
+    <string name="stock">Existencias</string>
+    <string name="add">Agregar</string>
+    <string name="maxstock">Llenar al maximo</string>
+    <string name="refillItems">Completar Faltantes</string>
+    <string name="Accept">Aceptar</string>
+    <string name="clients">Clientes</string>
+    <string name="id">Cédula</string>
+    <string name="name">Nombre</string>
+    <string name="address">Direccion</string>
+    <string name="edit">Editar</string>
+    <string name="Return">Volver</string>
+    <string name="save">Guardar</string>
+    <string name="back">Atrás</string>
+    <string name="search_invoice">Buscar Factura</string>
+    <string name="invoiceNumber">Numero de Factura</string>
+    <string name="client">Cliente</string>
+    <string name="Total">Total</string>
+    <string name="cancel">Cancelar</string>
+    <string name="print">Imprimir</string>
+    <string name="billing">Facturación</string>
+    <string name="numberbilling">Número de factura</string>
+    <string name="date">Fecha</string>
+    <string name="subtotal">Sub-Total</string>
+    <string name="password">Contraseña</string>
+    <string name="signup">Registrarse</string>
+</resources>
