@@ -42,7 +42,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/back"
-        android:src="@font/ic_back"
+        android:src="@mipmap/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="Bimbo"
-                    android:src="@font/ic_bimbo" />
+                    android:src="@mipmap/ic_bimbo" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                     android:id="@+id/ivCocaCola"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@font/ic_coca_cola"
+                    android:src="@mipmap/ic_coca_cola"
                     android:contentDescription="CocaCola" />
 
                 <TextView
@@ -126,7 +126,7 @@
                     android:id="@+id/ivPepsi"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@font/ic_pepsi"
+                    android:src="@mipmap/ic_pepsi"
                     android:contentDescription="Pepsi" />
 
                 <TextView
@@ -149,7 +149,7 @@
                     android:id="@+id/ivBigCola"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@font/ic_big_cola"
+                    android:src="@mipmap/ic_big_cola"
                     android:contentDescription="BigCola" />
 
                 <TextView
@@ -178,7 +178,7 @@
                     android:id="@+id/ivAlmacenSA"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@font/ic_almacen_sa"
+                    android:src="@mipmap/ic_almacen_sa"
                     android:contentDescription="AlmacenS.A" />
 
                 <TextView
@@ -201,7 +201,7 @@
                     android:id="@+id/ivCarnesLaFinca"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@font/ic_carnes_la_finca"
+                    android:src="@mipmap/ic_carnes_la_finca"
                     android:contentDescription="Carnes La Finca" />
 
                 <TextView

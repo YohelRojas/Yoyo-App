@@ -46,7 +46,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         btnProductos.setOnClickListener {
-            startActivity(Intent(this, ProductoGestionActivity::class.java))
+            startActivity(Intent(this, ProductoGestion::class.java))
         }
 
         btnInventario.setOnClickListener {
