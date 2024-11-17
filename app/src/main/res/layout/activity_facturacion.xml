@@ -24,7 +24,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/back"
-            android:src="@font/ic_back" />
+            android:src="@mipmap/ic_back" />
     </LinearLayout>
 
     <TextView
@@ -67,7 +67,8 @@
             android:layout_marginBottom="16dp"
             android:background="#FFFFFF"
             android:padding="4dp"
-            android:stretchColumns="1,2,3,4,5">
+            android:stretchColumns="1,2,3,4,5"
+            tools:ignore="DuplicateIds">
 
             <TableRow>
 
@@ -99,12 +100,6 @@
                     android:text="@string/date"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/txt_total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Total"
-                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow>
@@ -177,12 +172,6 @@
             android:text="@string/Total"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etTotal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext"
-            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout

@@ -44,13 +44,13 @@ class RegisterUser : AppCompatActivity() {
                 Toast.makeText(this, "Debe aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, LoginUser::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
         }
 
         tvSignIn.setOnClickListener {
-            val intent = Intent(this, LoginUser::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
