@@ -1,6 +1,5 @@
 package cr.ac.utn.com.example.yoyoapp
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -37,7 +36,7 @@ class ProductoGestion : AppCompatActivity() {
     }
 
     private fun configurarRecyclerView() {
-        val productos = productoModel.obtenerProductos()
+        val productos = productoModel.obtenerProductos() // Obtener productos desde el modelo.
         productoAdapter = CustomAdapter(productos.toMutableList()) { producto, action ->
             onProductoAction(producto, action)
         }
