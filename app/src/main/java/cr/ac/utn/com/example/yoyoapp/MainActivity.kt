@@ -1,5 +1,6 @@
 package cr.ac.utn.com.example.yoyoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -23,14 +24,22 @@ class MainActivity : AppCompatActivity() {
             val contrasena = etContrasena.text.toString()
 
             if (usuario.isNotEmpty() && contrasena.isNotEmpty()) {
-                Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                if (usuario == "admin" && contrasena == "1234") {
+                    Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, FacturaActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "Por favor, ingresa usuario y contraseña", Toast.LENGTH_SHORT).show()
             }
         }
 
         tvSignUp.setOnClickListener {
-            Toast.makeText(this, "Redirigiendo a registro", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, InventarioActivity::class.java)
+            startActivity(intent)
         }
     }
 }

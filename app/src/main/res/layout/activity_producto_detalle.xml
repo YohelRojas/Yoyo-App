@@ -28,15 +28,15 @@
         android:id="@+id/ivProducto"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edittext"
         android:contentDescription="Imagen del producto"
         android:scaleType="centerCrop"
-        android:background="@mipmap/ic_back"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
 
-    <!-- Campos de texto para el nombre, precio y cantidad -->
+    <!-- Nombre del producto -->
     <EditText
         android:id="@+id/etNombre"
         android:layout_width="0dp"
@@ -50,6 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
+    <!-- Precio -->
     <EditText
         android:id="@+id/etPrecio"
         android:layout_width="0dp"
@@ -63,6 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
+    <!-- Cantidad -->
     <EditText
         android:id="@+id/etCantidad"
         android:layout_width="0dp"
@@ -76,16 +78,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
+    <!-- Botón para tomar foto -->
+    <Button
+        android:id="@+id/btnTomarFoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_guardar"
+        android:text="Tomar Foto"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/etCantidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- Botón para guardar producto -->
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_guardar"
         android:text="Guardar Producto"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/etCantidad"
+        app:layout_constraintTop_toBottomOf="@id/btnTomarFoto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

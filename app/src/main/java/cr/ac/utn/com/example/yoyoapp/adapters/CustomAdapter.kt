@@ -1,7 +1,7 @@
 package cr.ac.utn.com.example.yoyoapp.adapters
 
 import android.annotation.SuppressLint
-import android.net.Uri
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +38,13 @@ class CustomAdapter(
         holder.tvNombre.text = producto.nombre
         holder.tvPrecio.text = "₡${producto.precio}"
         holder.tvCantidad.text = "Cantidad: ${producto.cantidad}"
-        holder.ivProducto.setImageURI(Uri.parse(producto.imagenUri))
+
+        if (producto.imagenBitmap != null) {
+            holder.ivProducto.setImageBitmap(producto.imagenBitmap)
+        } else {
+
+            holder.ivProducto.setImageResource(R.drawable.ic_placeholder_image)
+        }
 
         holder.btnEditar.setOnClickListener {
             onProductoClickListener(producto, "edit")

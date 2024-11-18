@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
@@ -18,9 +17,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import cr.ac.utn.com.example.yoyoapp.entities.Producto
 import cr.ac.utn.com.example.yoyoapp.model.ProductoModel
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
 import java.util.*
 
 class ProductoDetalleActivity : AppCompatActivity() {
@@ -30,12 +26,12 @@ class ProductoDetalleActivity : AppCompatActivity() {
     private lateinit var etCantidad: EditText
     private lateinit var ivProducto: ImageView
     private lateinit var btnGuardar: Button
+    private lateinit var btnTomarFoto: Button
 
     private val productoModel = ProductoModel()
-    private var imagenUri: String? = null
+    private var imagenBitmap: Bitmap? = null
 
     private val CAMERA_REQUEST_CODE = 1001
-    private val GALLERY_REQUEST_CODE = 1002
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,31 +47,17 @@ class ProductoDetalleActivity : AppCompatActivity() {
         etCantidad = findViewById(R.id.etCantidad)
         ivProducto = findViewById(R.id.ivProducto)
         btnGuardar = findViewById(R.id.btnGuardar)
+        btnTomarFoto = findViewById(R.id.btnTomarFoto)
     }
 
-
     private fun configurarListeners() {
-        ivProducto.setOnClickListener {
-            mostrarDialogOpciones()
+        btnTomarFoto.setOnClickListener {
+            abrirCamara()
         }
 
         btnGuardar.setOnClickListener {
             guardarProducto()
         }
-    }
-
-    private fun mostrarDialogOpciones() {
-        val opciones = arrayOf("Tomar Foto", "Seleccionar de Galería", "Cancelar")
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Selecciona una opción")
-        builder.setItems(opciones) { dialog, which ->
-            when (which) {
-                0 -> abrirCamara()
-                1 -> abrirGaleria()
-                2 -> dialog.dismiss()
-            }
-        }
-        builder.show()
     }
 
     private fun abrirCamara() {
@@ -91,42 +73,13 @@ class ProductoDetalleActivity : AppCompatActivity() {
         }
     }
 
-    private fun abrirGaleria() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intent, GALLERY_REQUEST_CODE)
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode == Activity.RESULT_OK) {
-            when (requestCode) {
-                CAMERA_REQUEST_CODE -> {
-                    val bitmap = data?.extras?.get("data") as Bitmap
-                    guardarImagen(bitmap)
-                }
-                GALLERY_REQUEST_CODE -> {
-                    data?.data?.let { uri ->
-                        imagenUri = uri.toString()
-                        ivProducto.setImageURI(uri)
-                    }
-                }
-            }
-        }
-    }
-
-    private fun guardarImagen(bitmap: Bitmap) {
-        val filename = "producto_${UUID.randomUUID()}.jpg"
-        val file = File(filesDir, filename)
-        try {
-            FileOutputStream(file).use { out ->
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out)
-            }
-            imagenUri = Uri.fromFile(file).toString()
+        if (resultCode == Activity.RESULT_OK && requestCode == CAMERA_REQUEST_CODE) {
+            val bitmap = data?.extras?.get("data") as Bitmap
+            imagenBitmap = bitmap
             ivProducto.setImageBitmap(bitmap)
-        } catch (e: IOException) {
-            e.printStackTrace()
-            Toast.makeText(this, "Error al guardar imagen", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -135,7 +88,7 @@ class ProductoDetalleActivity : AppCompatActivity() {
         val precio = etPrecio.text.toString().toDoubleOrNull()
         val cantidad = etCantidad.text.toString().toIntOrNull()
 
-        if (nombre.isEmpty() || precio == null || cantidad == null) {
+        if (nombre.isEmpty() || precio == null || cantidad == null || imagenBitmap == null) {
             Toast.makeText(this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show()
             return
         }
@@ -145,11 +98,17 @@ class ProductoDetalleActivity : AppCompatActivity() {
             nombre = nombre,
             precio = precio,
             cantidad = cantidad,
-            imagenUri = imagenUri
+            imagenBitmap = imagenBitmap
         )
 
         productoModel.agregarProducto(producto)
-        setResult(RESULT_OK)
+        Toast.makeText(this, "Producto guardado con éxito", Toast.LENGTH_SHORT).show()
+        navegarAListaProductos()
+    }
+
+    private fun navegarAListaProductos() {
+        val intent = Intent(this, ProductoGestion::class.java)
+        startActivity(intent)
         finish()
     }
 }

@@ -1,5 +1,6 @@
 package cr.ac.utn.com.example.yoyoapp.entities
 
+import android.graphics.Bitmap
 import java.io.Serializable
 
 data class Producto(
@@ -7,5 +8,5 @@ data class Producto(
     val nombre: String,
     val precio: Double,
     val cantidad: Int,
-    val imagenUri: String?
+    var imagenBitmap: Bitmap? = null
 ) : Serializable

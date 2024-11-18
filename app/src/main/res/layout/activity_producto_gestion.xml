@@ -48,18 +48,19 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- RecyclerView para mostrar la lista de productos -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProductos"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tvUsername"
         app:layout_constraintBottom_toTopOf="@id/btnAgregarProducto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvUsername"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <!-- Botón para agregar un nuevo producto -->
     <Button
         android:id="@+id/btnAgregarProducto"
         android:layout_width="wrap_content"

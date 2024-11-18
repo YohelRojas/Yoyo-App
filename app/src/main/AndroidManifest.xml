@@ -24,7 +24,7 @@
 
         <!-- Activities -->
         <activity
-            android:name=".ProductoDetalleActivity" />
+            android:name=".MainActivity" />
 
         <activity
             android:name=".InventarioActivity"
@@ -48,11 +48,11 @@
             android:name=".ProductoGestion"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".RegisterUser"
             android:exported="false" />
 
         <!-- Actividad principal -->
-        <activity android:name=".RegisterUser" android:exported="true">
+        <activity android:name=".ProductoDetalleActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
