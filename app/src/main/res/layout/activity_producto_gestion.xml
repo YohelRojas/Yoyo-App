@@ -8,7 +8,6 @@
     android:background="@drawable/fondo_gradient"
     tools:context=".ProductoGestion">
 
-    <!-- Título de la aplicación -->
     <TextView
         android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
@@ -22,7 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <!-- Nombre del usuario -->
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
@@ -36,7 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
-    <!-- Botón de regreso -->
     <ImageView
         android:id="@+id/ivBack"
         android:layout_width="32dp"
@@ -48,18 +45,17 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp" />
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProductos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="293dp"
+        android:layout_height="392dp"
         android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@id/btnAgregarProducto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUsername"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.363" />
 
     <Button
         android:id="@+id/btnAgregarProducto"
@@ -67,8 +63,12 @@
         android:layout_height="wrap_content"
         android:text="Agregar Producto"
         android:textColor="#FFFFFF"
+        android:background="@drawable/button_guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="24dp" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

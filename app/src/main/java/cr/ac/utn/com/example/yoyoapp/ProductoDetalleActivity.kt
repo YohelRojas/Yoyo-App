@@ -27,11 +27,13 @@ class ProductoDetalleActivity : AppCompatActivity() {
     private lateinit var ivProducto: ImageView
     private lateinit var btnGuardar: Button
     private lateinit var btnTomarFoto: Button
+    private lateinit var btnSeleccionarGaleria: Button
 
     private val productoModel = ProductoModel()
     private var imagenBitmap: Bitmap? = null
 
     private val CAMERA_REQUEST_CODE = 1001
+    private val GALLERY_REQUEST_CODE = 1002
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,11 +50,16 @@ class ProductoDetalleActivity : AppCompatActivity() {
         ivProducto = findViewById(R.id.ivProducto)
         btnGuardar = findViewById(R.id.btnGuardar)
         btnTomarFoto = findViewById(R.id.btnTomarFoto)
+        btnSeleccionarGaleria = findViewById(R.id.btnSeleccionarGaleria2)
     }
 
     private fun configurarListeners() {
         btnTomarFoto.setOnClickListener {
             abrirCamara()
+        }
+
+        btnSeleccionarGaleria.setOnClickListener {
+            abrirGaleria()
         }
 
         btnGuardar.setOnClickListener {
@@ -73,13 +80,28 @@ class ProductoDetalleActivity : AppCompatActivity() {
         }
     }
 
+    private fun abrirGaleria() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, GALLERY_REQUEST_CODE)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode == Activity.RESULT_OK && requestCode == CAMERA_REQUEST_CODE) {
-            val bitmap = data?.extras?.get("data") as Bitmap
-            imagenBitmap = bitmap
-            ivProducto.setImageBitmap(bitmap)
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                CAMERA_REQUEST_CODE -> {
+                    val bitmap = data?.extras?.get("data") as Bitmap
+                    imagenBitmap = bitmap
+                    ivProducto.setImageBitmap(bitmap)
+                }
+                GALLERY_REQUEST_CODE -> {
+                    val uri = data?.data
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+                    imagenBitmap = bitmap
+                    ivProducto.setImageBitmap(bitmap)
+                }
+            }
         }
     }
 

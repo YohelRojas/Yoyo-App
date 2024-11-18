@@ -3,6 +3,7 @@ package cr.ac.utn.com.example.yoyoapp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ class ProductoGestion : AppCompatActivity() {
     private lateinit var ivBack: ImageView
     private lateinit var recyclerViewProductos: RecyclerView
     private lateinit var productoAdapter: CustomAdapter
+    private lateinit var btnAgregarProducto: Button
     private val productoModel = ProductoModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,7 @@ class ProductoGestion : AppCompatActivity() {
     private fun inicializarVistas() {
         ivBack = findViewById(R.id.ivBack)
         recyclerViewProductos = findViewById(R.id.recyclerViewProductos)
+        btnAgregarProducto = findViewById(R.id.btnAgregarProducto)
     }
 
     private fun configurarRecyclerView() {
@@ -42,13 +45,11 @@ class ProductoGestion : AppCompatActivity() {
         recyclerViewProductos.adapter = productoAdapter
     }
 
-    @SuppressLint("WrongViewCast")
     private fun configurarListeners() {
         ivBack.setOnClickListener {
             finish()
         }
 
-        val btnAgregarProducto = findViewById<ImageView>(R.id.btnAgregarProducto)
         btnAgregarProducto.setOnClickListener {
             agregarProducto()
         }
@@ -70,7 +71,7 @@ class ProductoGestion : AppCompatActivity() {
     private fun editarProducto(producto: Producto) {
         val intent = Intent(this, ProductoDetalleActivity::class.java)
         intent.putExtra("action", "edit")
-        intent.putExtra("producto", producto)
+        intent.putExtra("productoId", producto.id)
         startActivityForResult(intent, REQUEST_CODE_EDIT_PRODUCT)
     }
 

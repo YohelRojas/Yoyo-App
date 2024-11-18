@@ -32,5 +32,7 @@
     <string name="subtotal">Sub-Total</string>
     <string name="password">Contraseña</string>
     <string name="signup">Registrarse</string>
+    <string name="take_photo">Tomar foto</string>
+
 
 </resources>

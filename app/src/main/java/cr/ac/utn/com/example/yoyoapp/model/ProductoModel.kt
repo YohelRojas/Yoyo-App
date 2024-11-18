@@ -13,19 +13,10 @@ class ProductoModel {
     fun obtenerProductos(): List<Producto> {
         return productos
     }
-
-    fun actualizarProducto(producto: Producto) {
-        val index = productos.indexOfFirst { it.id == producto.id }
-        if (index != -1) {
-            productos[index] = producto
-        }
+    fun obtenerProductos(id: String): Producto? {
+        return productos.find { it.id == id }
     }
-
     fun eliminarProducto(id: String) {
         productos.removeAll { it.id == id }
-    }
-
-    fun obtenerProductoPorId(id: String): Producto? {
-        return productos.find { it.id == id }
     }
 }

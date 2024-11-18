@@ -32,18 +32,17 @@ class CustomAdapter(
         return ProductoViewHolder(view)
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ProductoViewHolder, position: Int) {
         val producto = productos[position]
         holder.tvNombre.text = producto.nombre
         holder.tvPrecio.text = "₡${producto.precio}"
         holder.tvCantidad.text = "Cantidad: ${producto.cantidad}"
 
+        // Usar Bitmap para asignar la imagen
         if (producto.imagenBitmap != null) {
             holder.ivProducto.setImageBitmap(producto.imagenBitmap)
         } else {
-
-            holder.ivProducto.setImageResource(R.drawable.ic_placeholder_image)
+            holder.ivProducto.setImageResource(R.drawable.ic_placeholder_image) // Imagen por defecto
         }
 
         holder.btnEditar.setOnClickListener {
@@ -57,9 +56,10 @@ class CustomAdapter(
 
     override fun getItemCount() = productos.size
 
-    @SuppressLint("NotifyDataSetChanged")
     fun actualizarLista(nuevaLista: MutableList<Producto>) {
-        productos = nuevaLista
+        productos.clear()
+        productos.addAll(nuevaLista)
         notifyDataSetChanged()
     }
 }
+
