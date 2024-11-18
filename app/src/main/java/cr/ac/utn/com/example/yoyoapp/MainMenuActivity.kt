@@ -43,6 +43,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         btnProveedores.setOnClickListener {
+            Toast.makeText(this, "Proveedores no implementado", Toast.LENGTH_SHORT).show()
         }
 
         btnProductos.setOnClickListener {
@@ -62,6 +63,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         rbCambiarUsuario.setOnClickListener {
+            Toast.makeText(this, "Cambio de usuario no implementado", Toast.LENGTH_SHORT).show()
         }
 
         rbSalir.setOnClickListener {

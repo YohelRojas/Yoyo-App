@@ -1,6 +1,5 @@
 package cr.ac.utn.com.example.yoyoapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -29,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, ingresa usuario y contraseña", Toast.LENGTH_SHORT).show()
             }
         }
+
         tvSignUp.setOnClickListener {
             Toast.makeText(this, "Redirigiendo a registro", Toast.LENGTH_SHORT).show()
         }

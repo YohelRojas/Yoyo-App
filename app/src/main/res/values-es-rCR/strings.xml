@@ -3,25 +3,25 @@
     <string name="app_name">YoyoApp</string>
     <string name="user">Usuario</string>
     <string name="logo">YOYO APP</string>
-    <string name="login">Iniciar Sesion</string>
+    <string name="login">Iniciar Sesión</string>
     <string name="username">Nombre de Usuario</string>
     <string name="inventory">Inventario</string>
     <string name="products">Productos</string>
     <string name="stock">Existencias</string>
     <string name="add">Agregar</string>
-    <string name="maxstock">Llenar al maximo</string>
+    <string name="maxstock">Llenar al máximo</string>
     <string name="refillItems">Completar Faltantes</string>
     <string name="Accept">Aceptar</string>
     <string name="clients">Clientes</string>
     <string name="id">Cédula</string>
     <string name="name">Nombre</string>
-    <string name="address">Direccion</string>
+    <string name="address">Dirección</string>
     <string name="edit">Editar</string>
     <string name="Return">Volver</string>
     <string name="save">Guardar</string>
     <string name="back">Atrás</string>
     <string name="search_invoice">Buscar Factura</string>
-    <string name="invoiceNumber">Numero de Factura</string>
+    <string name="invoiceNumber">Número de Factura</string>
     <string name="client">Cliente</string>
     <string name="Total">Total</string>
     <string name="cancel">Cancelar</string>
@@ -32,4 +32,5 @@
     <string name="subtotal">Sub-Total</string>
     <string name="password">Contraseña</string>
     <string name="signup">Registrarse</string>
+
 </resources>
