@@ -1,19 +1,15 @@
-package cr.ac.utn.com.example.yoyoapp.model
-
+import cr.ac.utn.com.example.yoyoapp.data.ManagerMemory
 import cr.ac.utn.com.example.yoyoapp.entities.Factura
 
 class FacturaModel {
-    private val facturas: MutableList<Factura> = mutableListOf()
 
     fun agregarFactura(factura: Factura) {
-        facturas.add(factura)
+        ManagerMemory.add(factura)
     }
-
-    fun obtenerFacturas(): List<Factura> {
-        return facturas
+    fun actualizarFactura(factura: Factura) {
+        ManagerMemory.update(factura)
     }
-
-    fun eliminarFactura(numero: String) {
-        facturas.removeIf { it.numero == numero }
+    fun obtenerFacturaPorNumero(numero: String): Factura? {
+        return ManagerMemory.getByid(numero) as? Factura
     }
 }

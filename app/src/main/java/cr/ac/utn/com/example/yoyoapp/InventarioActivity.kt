@@ -1,5 +1,6 @@
 package cr.ac.utn.com.example.yoyoapp
 
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -16,6 +17,7 @@ class InventarioActivity : AppCompatActivity() {
     private lateinit var btnCompletarFaltantes: Button
     private lateinit var btnAceptar: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventario)
@@ -29,8 +31,8 @@ class InventarioActivity : AppCompatActivity() {
         btnAceptar = findViewById(R.id.btnAceptar)
 
         btnRestar.setOnClickListener {
-            val currentStock = etStockActual.text.toString().toInt()
-            if (currentStock > 0) {
+            val currentStock = etStockActual.text.toString().toIntOrNull()
+            if (currentStock != null && currentStock > 0) {
                 etStockActual.setText((currentStock - 1).toString())
             } else {
                 Toast.makeText(this, "No hay más stock disponible", Toast.LENGTH_SHORT).show()
@@ -38,13 +40,17 @@ class InventarioActivity : AppCompatActivity() {
         }
 
         btnSumar.setOnClickListener {
-            val currentStock = etStockActual.text.toString().toInt()
-            etStockActual.setText((currentStock + 1).toString())
+            val currentStock = etStockActual.text.toString().toIntOrNull()
+            if (currentStock != null) {
+                etStockActual.setText((currentStock + 1).toString())
+            }
         }
 
         btnCompletarFaltantes.setOnClickListener {
-            val stockMaximo = etStockMaximo.text.toString().toInt()
-            etStockActual.setText(stockMaximo.toString())
+            val stockMaximo = etStockMaximo.text.toString().toIntOrNull()
+            if (stockMaximo != null) {
+                etStockActual.setText(stockMaximo.toString())
+            }
         }
 
         btnAceptar.setOnClickListener {

@@ -1,6 +1,5 @@
 package cr.ac.utn.com.example.yoyoapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -25,9 +24,9 @@ class ClientesActivity : AppCompatActivity() {
 
         tvUsername.text = "USERNAME"
 
-
         btnEditar.setOnClickListener {
-            Toast.makeText(this, "Editar clientes", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Editar clientes (CRUD no implementado aquí)",
+                Toast.LENGTH_SHORT).show()
         }
 
         btnVolver.setOnClickListener {
@@ -35,8 +34,8 @@ class ClientesActivity : AppCompatActivity() {
         }
 
         btnGuardar.setOnClickListener {
-            Toast.makeText(this, "Guardar cambios", Toast.LENGTH_SHORT).show()
-
+            Toast.makeText(this, "Guardar cambios (CRUD no implementado aquí)",
+                Toast.LENGTH_SHORT).show()
         }
     }
 }

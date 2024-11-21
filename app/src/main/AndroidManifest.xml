@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Declarar características de hardware -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <!-- Declarar permisos necesarios -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,21 +22,41 @@
         android:theme="@style/Theme.YoyoApp"
         tools:targetApi="31">
 
-        <activity android:name=".InventarioActivity" android:exported="false" />
-        <activity android:name=".FacturacionActivity" android:exported="false" />
-        <activity android:name=".InventarioGeneralActivity" android:exported="false" />
-        <activity android:name=".FacturaActivity" android:exported="false" />
-        <activity android:name=".ClientesActivity" android:exported="false" />
-        <activity android:name=".MainMenuActivity" android:exported="false" />
-        <activity android:name=".RegisterUser" android:exported="false" />
-        <activity android:name=".ProductoGestion" android:exported="false" />
-        <activity android:name=".MainActivity" android:exported="true">
+        <!-- Activities -->
+        <activity
+            android:name=".MainActivity" />
+
+        <activity
+            android:name=".InventarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacturacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InventarioGeneralActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacturaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductoGestion"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterUser"
+            android:exported="false" />
+
+        <!-- Actividad principal -->
+        <activity android:name=".ProductoDetalleActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

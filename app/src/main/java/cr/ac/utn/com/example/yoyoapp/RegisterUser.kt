@@ -23,6 +23,11 @@ class RegisterUser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_user)
 
+        inicializarVistas()
+        configurarListeners()
+    }
+
+    private fun inicializarVistas() {
         etUsername = findViewById(R.id.etUsername)
         etFullName = findViewById(R.id.etFullName)
         etEmail = findViewById(R.id.etEmail)
@@ -30,7 +35,9 @@ class RegisterUser : AppCompatActivity() {
         cbTerms = findViewById(R.id.cbTerms)
         btnRegister = findViewById(R.id.btnRegister)
         tvSignIn = findViewById(R.id.tvSignIn)
+    }
 
+    private fun configurarListeners() {
         btnRegister.setOnClickListener {
             val username = etUsername.text.toString()
             val fullName = etFullName.text.toString()
