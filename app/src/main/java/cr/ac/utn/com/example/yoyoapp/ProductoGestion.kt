@@ -18,7 +18,7 @@ class ProductoGestion : AppCompatActivity() {
     private lateinit var recyclerViewProductos: RecyclerView
     private lateinit var productoAdapter: CustomAdapter
     private lateinit var btnAgregarProducto: Button
-    private val productoModel = ProductoModel()
+    private val productoModel = ProductoModel(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ class ProductoGestion : AppCompatActivity() {
     }
 
     private fun configurarRecyclerView() {
-        val productos = productoModel.obtenerProductos() // Obtener productos desde el modelo.
+        val productos = productoModel.obtenerProductos()
         productoAdapter = CustomAdapter(productos.toMutableList()) { producto, action ->
             onProductoAction(producto, action)
         }
@@ -63,7 +63,6 @@ class ProductoGestion : AppCompatActivity() {
 
     private fun agregarProducto() {
         val intent = Intent(this, ProductoDetalleActivity::class.java)
-        intent.putExtra("action", "add")
         startActivityForResult(intent, REQUEST_CODE_ADD_PRODUCT)
     }
 
@@ -76,19 +75,20 @@ class ProductoGestion : AppCompatActivity() {
 
     private fun eliminarProducto(producto: Producto) {
         productoModel.eliminarProducto(producto.id)
-        productoAdapter.actualizarLista(productoModel.obtenerProductos().toMutableList())
+        actualizarLista()
         Toast.makeText(this, "Producto eliminado: ${producto.nombre}", Toast.LENGTH_SHORT).show()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
-            when (requestCode) {
-                REQUEST_CODE_ADD_PRODUCT, REQUEST_CODE_EDIT_PRODUCT -> {
-                    productoAdapter.actualizarLista(productoModel.obtenerProductos().toMutableList())
-                }
-            }
+            actualizarLista()
         }
+    }
+
+    private fun actualizarLista() {
+        val productos = productoModel.obtenerProductos()
+        productoAdapter.actualizarLista(productos.toMutableList())
     }
 
     companion object {
