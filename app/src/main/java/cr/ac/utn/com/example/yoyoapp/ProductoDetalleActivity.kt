@@ -29,7 +29,7 @@ class ProductoDetalleActivity : AppCompatActivity() {
     private lateinit var btnTomarFoto: Button
     private lateinit var btnSeleccionarGaleria: Button
 
-    private val productoModel = ProductoModel()
+    private val productoModel = ProductoModel(this)
     private var imagenBitmap: Bitmap? = null
 
     private val CAMERA_REQUEST_CODE = 1001
@@ -68,11 +68,7 @@ class ProductoDetalleActivity : AppCompatActivity() {
     }
 
     private fun abrirCamara() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), CAMERA_REQUEST_CODE)
         } else {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -94,14 +90,23 @@ class ProductoDetalleActivity : AppCompatActivity() {
                     val bitmap = data?.extras?.get("data") as Bitmap
                     imagenBitmap = bitmap
                     ivProducto.setImageBitmap(bitmap)
+                    Toast.makeText(this, "Foto tomada con éxito", Toast.LENGTH_SHORT).show()
                 }
+
                 GALLERY_REQUEST_CODE -> {
                     val uri = data?.data
-                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
-                    imagenBitmap = bitmap
-                    ivProducto.setImageBitmap(bitmap)
+                    if (uri != null) {
+                        val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+                        imagenBitmap = bitmap
+                        ivProducto.setImageBitmap(bitmap)
+                        Toast.makeText(this, "Imagen seleccionada de la galería", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "No se seleccionó ninguna imagen", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+        } else {
+            Toast.makeText(this, "Operación cancelada", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -124,12 +129,13 @@ class ProductoDetalleActivity : AppCompatActivity() {
         )
 
         productoModel.agregarProducto(producto)
-        Toast.makeText(this, "Producto guardado con éxito", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Producto guardado exitosamente", Toast.LENGTH_SHORT).show()
         navegarAListaProductos()
     }
 
     private fun navegarAListaProductos() {
         val intent = Intent(this, ProductoGestion::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
         finish()
     }

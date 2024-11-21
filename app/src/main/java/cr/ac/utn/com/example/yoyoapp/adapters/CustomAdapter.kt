@@ -1,7 +1,6 @@
 package cr.ac.utn.com.example.yoyoapp.adapters
 
-import android.annotation.SuppressLint
-import android.graphics.Bitmap
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,11 +37,11 @@ class CustomAdapter(
         holder.tvPrecio.text = "₡${producto.precio}"
         holder.tvCantidad.text = "Cantidad: ${producto.cantidad}"
 
-        // Usar Bitmap para asignar la imagen
+        // Si el producto tiene una imagen, mostrarla
         if (producto.imagenBitmap != null) {
             holder.ivProducto.setImageBitmap(producto.imagenBitmap)
         } else {
-            holder.ivProducto.setImageResource(R.drawable.ic_placeholder_image) // Imagen por defecto
+            holder.ivProducto.setImageResource(R.drawable.ic_placeholder_image)
         }
 
         holder.btnEditar.setOnClickListener {
@@ -57,9 +56,9 @@ class CustomAdapter(
     override fun getItemCount() = productos.size
 
     fun actualizarLista(nuevaLista: MutableList<Producto>) {
-        productos.clear()
-        productos.addAll(nuevaLista)
+        productos = nuevaLista
         notifyDataSetChanged()
     }
 }
+
 
